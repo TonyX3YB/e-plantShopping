@@ -1,4 +1,4 @@
-/* LandingPage.css */
+/* Global styles for app */
 * {
   margin: 0;
   padding: 0;
@@ -6,11 +6,65 @@
   overflow: hidden;
 }
 
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar-logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+}
+
+.cart-icon {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.cart-icon-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+.cart-icon-image {
+  width: 30px;
+  height: 30px;
+}
+
+/* Landing Page Styles */
 .landing-page {
   position: relative;
   width: 100vw;
   height: 100vh;
   background-color: #f8f8f8;
+  margin-top: 60px; /* Space for the navbar */
 }
 
 .background-image {
@@ -24,25 +78,25 @@
   background-position: center;
   filter: brightness(0.8);
 }
+
 .content {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
   width: 100vw;
- top: 100px;
+  top: 100px;
   backdrop-filter: blur(4px);
   background-color: rgba(0,0,0,0.5);
   gap: 20px;
 }
 
 .landing_content {
- margin-top: 430px;
+  margin-top: 430px;
   margin-left: 100px;
   transform: translate(-50%, -50%);
   z-index: 1;
   text-align: center;
-  /* background-color: red; */
   width: 400px;
   height: 400px;
   display: flex;
@@ -89,31 +143,26 @@
   background-color: #45a049;
 }
 
-/* ProductList.css */
-
+/* Product List Styles */
 .product-list-container {
   position: absolute;
   overflow-x: hidden;
   top: 100vh;
-  /* Initially off-screen */
   left: 0;
   width: 100%;
   height: 100vh;
   background-color: rgba(255, 255, 255, 0.9);
-  /* Adjust background opacity as needed */
   transition: top 0.5s ease;
-  /* Smooth transition for top property */
   overflow-y: auto;
-  /* Enable vertical scrolling */
   z-index: 2;
-  /* Ensure it's above landing page content */
   backdrop-filter: blur(5px);
 }
 
 .product-list-container.visible {
   top: 0;
 }
-/* LandingPage.css */
+
+/* Media Queries */
 @media screen and (max-width: 768px) {
   .content {
     flex-direction: column;
@@ -123,25 +172,78 @@
   }
 
   .landing_content {
-    margin-top: 100px; /* Adjust as needed */
+    margin-top: 100px;
     margin-left: 0;
-    width: 80%; /* Adjust as needed */
+    width: 80%;
     text-align: center;
   }
 
   .aboutus_container {
-    margin-top: 20px; /* Adjust as needed */
-    width: 80%; /* Adjust as needed */
+    margin-top: 20px;
+    width: 80%;
   }
 }
 
 @media screen and (max-width: 480px) {
   .landing_content {
-    margin-top: 50px; /* Adjust as needed */
-    width: 90%; /* Adjust as needed */
+    margin-top: 50px;
+    width: 90%;
   }
 
   .aboutus_container {
-    width: 90%; /* Adjust as needed */
+    width: 90%;
   }
 }
+
+/* Your existing styles, plus cart-related styling */
+
+.app-container {
+  font-family: Arial, sans-serif;
+}
+
+.landing-page {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f8f8f8;
+  transition: opacity 0.5s ease;
+}
+
+.product-list-container {
+  position: absolute;
+  overflow-x: hidden;
+  top: 100vh;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.9);
+  transition: top 0.5s ease;
+}
+
+.product-list-container.visible {
+  top: 0;
+}
+
+/* Cart page styling */
+.cart-page {
+  padding: 20px;
+  background-color: #f8f8f8;
+  height: 100vh;
+}
+
+.cart-page ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.cart-page li {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.cart-page .cart-total {
+  font-size: 20px;
+  margin-top: 20px;
+}
+

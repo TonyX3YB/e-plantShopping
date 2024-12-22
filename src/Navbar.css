@@ -1,0 +1,20 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .navbar-title {
+    font-size: 24px;
+  }
+  
+  .cart-icon {
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
